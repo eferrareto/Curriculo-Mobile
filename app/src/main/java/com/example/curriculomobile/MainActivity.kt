@@ -1,5 +1,6 @@
 package com.example.curriculomobile
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,7 +24,12 @@ class MainActivity : AppCompatActivity() {
         val list_mutable = mutableListOf<RecyclerData>()
 
         recycler = findViewById(R.id.rc_main)
-        recycler.adapter = MainAdapter(list_mutable)
+        recycler.adapter = MainAdapter(list_mutable){ id ->
+
+            val intent = Intent(this, About::class.java)
+            startActivity(intent)
+
+        }
         recycler.layoutManager = GridLayoutManager(this, 2)
 
 
@@ -51,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    inner class MainAdapter(val list : MutableList<RecyclerData>) : RecyclerView.Adapter<MainViewHolder>(){
+    inner class MainAdapter(val list : MutableList<RecyclerData>, private var cliked: (Int) -> Unit) : RecyclerView.Adapter<MainViewHolder>(){
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
             val view = layoutInflater.inflate(R.layout.categories_main, parent, false)
             return MainViewHolder(view)
@@ -59,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 
         override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
             val posi = list[position]
-            holder.bind(posi)
+            holder.bind(posi, cliked)
         }
 
         override fun getItemCount(): Int {
@@ -68,12 +74,18 @@ class MainActivity : AppCompatActivity() {
 
     }
     inner class MainViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-        fun bind(view : RecyclerData){
+        fun bind(view : RecyclerData, cliked: (Int) -> Unit){
             val text = itemView.findViewById<TextView>(R.id.text)
             val image = itemView.findViewById<ImageView>(R.id.image)
 
+
             text.text = view.text
             image.setImageResource(view.image)
+
+            itemView.setOnClickListener{
+                cliked(view.id)
+            }
+
         }
     }
 }
