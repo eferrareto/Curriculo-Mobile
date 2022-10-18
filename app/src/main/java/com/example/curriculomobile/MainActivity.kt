@@ -26,8 +26,7 @@ class MainActivity : AppCompatActivity() {
         recycler = findViewById(R.id.rc_main)
         recycler.adapter = MainAdapter(list_mutable){ id ->
 
-            val intent = Intent(this, About::class.java)
-            startActivity(intent)
+            changeActivity(id)
 
         }
         recycler.layoutManager = GridLayoutManager(this, 2)
@@ -55,6 +54,18 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    }
+
+    private fun changeActivity(id : Int){
+        when(id){
+            1 -> intent = Intent(this, About::class.java)
+            2 -> intent = Intent(this, Experiences::class.java)
+            3 -> intent = Intent(this, School::class.java)
+            4 -> intent = Intent(this, Projects::class.java)
+            5 -> intent = Intent(this, Contact::class.java)
+            6 -> intent = Intent(this, Certification::class.java)
+        }
+        startActivity(intent)
     }
 
     inner class MainAdapter(val list : MutableList<RecyclerData>, private var cliked: (Int) -> Unit) : RecyclerView.Adapter<MainViewHolder>(){

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Curriculo Mobile</string>
+    <string name="text_about"> Estudante no setor de Desenvolvimento Mobile, diferente de muitos outros profissionais, tenho sede de aprendizado,
+não somente na área de tecnologia mas também em diversas áreas
+da nossa vida. </string>
+    <string name="whoIsErick">Quem é Erick Ferrareto ?</string>
 </resources>
