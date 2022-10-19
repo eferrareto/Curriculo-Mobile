@@ -25,12 +25,9 @@ class MainActivity : AppCompatActivity() {
 
         recycler = findViewById(R.id.rc_main)
         recycler.adapter = MainAdapter(list_mutable){ id ->
-
             changeActivity(id)
-
         }
         recycler.layoutManager = GridLayoutManager(this, 2)
-
 
 
         list_mutable.add(
@@ -51,9 +48,6 @@ class MainActivity : AppCompatActivity() {
         list_mutable.add(
             RecyclerData(6, R.drawable.certification, "Certificados")
         )
-
-
-
     }
 
     private fun changeActivity(id : Int){
@@ -82,8 +76,8 @@ class MainActivity : AppCompatActivity() {
         override fun getItemCount(): Int {
             return list.size
         }
-
     }
+
     inner class MainViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         fun bind(view : RecyclerData, cliked: (Int) -> Unit){
             val text = itemView.findViewById<TextView>(R.id.text)
