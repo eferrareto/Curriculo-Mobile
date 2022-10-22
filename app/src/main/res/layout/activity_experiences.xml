@@ -7,13 +7,25 @@
     tools:context=".Experiences">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/experience"
+        android:text="@string/experience"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Experiences Activity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="18dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_experience"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/experience"
+        android:layout_marginTop="12dp"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
