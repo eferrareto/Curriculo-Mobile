@@ -80,6 +80,7 @@ class MainActivity : AppCompatActivity() {
 
     inner class MainViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         fun bind(view : RecyclerData, cliked: (Int) -> Unit){
+
             val text = itemView.findViewById<TextView>(R.id.text)
             val image = itemView.findViewById<ImageView>(R.id.image)
 
