@@ -62,36 +62,5 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    inner class MainAdapter(val list : MutableList<RecyclerData>, private var cliked: (Int) -> Unit) : RecyclerView.Adapter<MainViewHolder>(){
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
-            val view = layoutInflater.inflate(R.layout.categories_main, parent, false)
-            return MainViewHolder(view)
-        }
 
-        override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
-            val posi = list[position]
-            holder.bind(posi, cliked)
-        }
-
-        override fun getItemCount(): Int {
-            return list.size
-        }
-    }
-
-    inner class MainViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-        fun bind(view : RecyclerData, cliked: (Int) -> Unit){
-
-            val text = itemView.findViewById<TextView>(R.id.text)
-            val image = itemView.findViewById<ImageView>(R.id.image)
-
-
-            text.text = view.text
-            image.setImageResource(view.image)
-
-            itemView.setOnClickListener{
-                cliked(view.id)
-            }
-
-        }
-    }
 }
