@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">Curriculo Mobile</string>
-    <string name="text_about"> Estudante no setor de Desenvolvimento Mobile, diferente de muitos outros profissionais, tenho sede de aprendizado,
-não somente na área de tecnologia mas também em diversas áreas
-da nossa vida. </string>
+    <string name="text_about"> Estudante de Análise e Desenvolvimento de Sistema, na universidade Estácio, 22 anos - São Paulo Brasil.</string>
     <string name="whoIsErick">Quem é Erick Ferrareto ?</string>
     <string name="name">Erick Ferrareto - Mobile Developer</string>
+    <string name="text_about2">Diferente de muitos outros profissionais, tenho sede de aprendizado, não somente na área de tecnologia mas também em diversas áreas da nossa vida.</string>
 </resources>

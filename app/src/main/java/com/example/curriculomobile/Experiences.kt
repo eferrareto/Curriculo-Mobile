@@ -51,6 +51,7 @@ class Experiences : AppCompatActivity() {
                     "- Analise de dados na leitura de Power B.I\n\n" +
                     "- Boas práticas em EXCEL (tabelas dinâmicas e " +
                     "códigos)")
+            .setNegativeButton("OK",null)
             .setTitle("Nov 2021 · 1 ano")
             .show()
     }
@@ -59,6 +60,7 @@ class Experiences : AppCompatActivity() {
             .setMessage("Minha colocação era na área operacional," +
                     " sempre focado em resolver as dificuldades que nossos clientes passavam.")
             .setTitle("Nov 2020 - Set 2021 · 11 meses")
+            .setNegativeButton("OK",null)
             .show()
     }
     fun mantris(){
@@ -67,6 +69,7 @@ class Experiences : AppCompatActivity() {
                     " também nas subidas de ASOs dentro do sistema operacional, " +
                     " e em todo o setor que necessitava de auxílio.")
             .setTitle("Ago 2019 - Ago 2020 · 1 Ano")
+            .setNegativeButton("OK",null)
             .show()
     }
     fun mongeacai(){
@@ -74,6 +77,7 @@ class Experiences : AppCompatActivity() {
             .setMessage("Preparava e embalava os pedidos, realizava a limpeza do restaurante e" +
                     "  finalizava com o fechamento do caixa.")
             .setTitle("Fev 2019 - Ago 2019 · 7 meses")
+            .setNegativeButton("OK",null)
             .show()
     }
 }
